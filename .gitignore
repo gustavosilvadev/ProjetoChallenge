@@ -1,0 +1,31 @@
+# Binários e build
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.app
+*.log
+
+# Configurações do usuário
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Configurações do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Dependências e pacotes
+packages/
+node_modules/
+
+# Arquivos do Docker (se houver)
+docker-compose.override.yml
+.env
+
+# Configuração do Visual Studio e Rider
+*.sln.DotSettings.user
+
