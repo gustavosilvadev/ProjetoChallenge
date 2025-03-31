@@ -1,0 +1,98 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/gustavo/ce4c0002-3045-4b0c-9472-63e303c1bcc2/PROJECTS/dotnet-workspace/ProjetoChallenge/ProjetoChallenge/Backend/ProjetoChallenge.csproj": {}
+  },
+  "projects": {
+    "/media/gustavo/ce4c0002-3045-4b0c-9472-63e303c1bcc2/PROJECTS/dotnet-workspace/ProjetoChallenge/ProjetoChallenge/Backend/ProjetoChallenge.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/gustavo/ce4c0002-3045-4b0c-9472-63e303c1bcc2/PROJECTS/dotnet-workspace/ProjetoChallenge/ProjetoChallenge/Backend/ProjetoChallenge.csproj",
+        "projectName": "ProjetoChallenge",
+        "projectPath": "/media/gustavo/ce4c0002-3045-4b0c-9472-63e303c1bcc2/PROJECTS/dotnet-workspace/ProjetoChallenge/ProjetoChallenge/Backend/ProjetoChallenge.csproj",
+        "packagesPath": "/home/gustavo/.nuget/packages/",
+        "outputPath": "/media/gustavo/ce4c0002-3045-4b0c-9472-63e303c1bcc2/PROJECTS/dotnet-workspace/ProjetoChallenge/ProjetoChallenge/Backend/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/gustavo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/gustavo/.asdf/installs/dotnet/9.0.102/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

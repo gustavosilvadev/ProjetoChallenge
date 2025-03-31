@@ -1,14 +1,55 @@
-version: '3.4'
+# version: '3.4'
+# services:
+#   projeto_challenge:
+#     image: projeto_challenge
+#     # build: .
+#     build:
+#       context: ./Backend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "5103:8080"
+#     depends_on:
+#       sqlserver:
+#         condition: service_healthy
+#     environment:
+#       - ConnectionStrings__DefaultConnection=Server=localhost,1433;Database=projetochallenge;User Id=sa;Password=A@VeryStrongP4ssword!;TrustServerCertificate=True;
+#   sqlserver:
+#     image: mcr.microsoft.com/mssql/server:2022-latest
+#     container_name: projetochallenge-db
+#     environment:
+#       ACCEPT_EULA: "1"
+#       SA_PASSWORD: "A@VeryStrongP4ssword!"
+#     ports:
+#       - "1433:1433"
+
+
+version: '3.8'
 services:
   projeto_challenge:
     image: projeto_challenge
-    build: .
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
     ports:
       - "5103:8080"
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    depends_on:
+      sqlserver:
+        condition: service_healthy
     environment:
-      SA_PASSWORD: "Your_password123"
-      ACCEPT_EULA: "Y"
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=projetochallenge;User Id=sa;Password=A@VeryStrongP4ssword!;TrustServerCertificate=True;
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: projetochallenge-db
+    environment:
+      ACCEPT_EULA: "1"
+      SA_PASSWORD: "A@VeryStrongP4ssword!"
     ports:
       - "1433:1433"
+    volumes:
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P A@VeryStrongP4ssword! -Q 'SELECT 1' || exit 1"]
+      interval: 15s
+      retries: 10
+      start_period: 60s

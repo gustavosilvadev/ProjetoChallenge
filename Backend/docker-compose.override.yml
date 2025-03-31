@@ -1,0 +1,5 @@
+version: '3.4'
+
+services:
+  api:
+    entrypoint: ["/bin/sh", "-c", "dotnet ef database update && dotnet ProjetoChallenge.dll"]
