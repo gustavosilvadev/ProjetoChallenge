@@ -75,8 +75,8 @@ RUN dotnet tool install --global dotnet-ef
 ENV PATH="$PATH:/root/.dotnet/tools"
 
 # Executar as migrations
-RUN dotnet ef migrations add UserProductCreate
-RUN dotnet ef database update
+# RUN dotnet ef migrations add UserProductCreate
+# RUN dotnet ef database update
 
 # Compilar o projeto
 RUN dotnet build "ProjetoChallenge.csproj" -c Release -o /app/build

@@ -9,11 +9,11 @@ public class User
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid Id { get; set; }
 
+    public required string Name { get; set; }
 
-    public string Name { get; set; }
-
-
-    public string Email { get; set; }
+    public required string Email { get; set; }
+    
+    public required string UserProfile { get; set; }
 
     [Required]
     public required string Username { get; set; }

@@ -46,8 +46,8 @@ services:
       SA_PASSWORD: "A@VeryStrongP4ssword!"
     ports:
       - "1433:1433"
-    volumes:
-      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    # volumes:
+    #   - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
     healthcheck:
       test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P A@VeryStrongP4ssword! -Q 'SELECT 1' || exit 1"]
       interval: 15s

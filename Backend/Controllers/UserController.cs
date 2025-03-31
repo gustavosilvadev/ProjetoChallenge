@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace ProjetoChallenge.Controllers;
 
 [ApiController]
-//[Route("api/[controller]")]
 [Route("user")]
 public class UserController : ControllerBase
 {

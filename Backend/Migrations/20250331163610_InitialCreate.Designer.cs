@@ -12,8 +12,8 @@ using ProjetoChallenge.Data;
 namespace ProjetoChallenge.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250331035015_AlterColumnsUserRequired")]
-    partial class AlterColumnsUserRequired
+    [Migration("20250331163610_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,10 @@ namespace ProjetoChallenge.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IdUser")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -67,6 +71,10 @@ namespace ProjetoChallenge.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserProfile")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
