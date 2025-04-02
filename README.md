@@ -9,7 +9,7 @@ ProjetoChallenge/
 ├── Backend/            # Backend em .NET Core 9.0 (Web API)
 │   ├── Dockerfile      # Arquivo de configuração do Docker
 │   ├── src/            # Código-fonte da API
-├── Frontend/           # Frontend em ReactJS ^19.1.0
+├── frontend-application/ # Frontend em ReactJS ^19.1.0
 │   ├── src/            # Código-fonte do React
 ├── docker-compose.yml  # Arquivo de orquestração do Docker
 ```
@@ -58,14 +58,17 @@ Para containerizar o frontend, crie um arquivo `Dockerfile` dentro da pasta `Fro
 ```
 # Usando uma imagem do Node.js
 FROM node:20-alpine
-
+ 
 WORKDIR /app
-
-COPY package.json package-lock.json ./
+ 
+COPY package*.json ./
+ 
 RUN npm install
-
+ 
 COPY . .
-
+ 
+EXPOSE 3000
+ 
 CMD ["npm", "start"]
 ```
 
