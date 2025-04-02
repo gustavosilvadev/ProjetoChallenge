@@ -18,19 +18,8 @@ type Product = {
     price: string | null;
     quantity: string | null;
     image: string | null;
-    // description: string;
-    // category: string | null;
-    // price: number;
-    // quantity: number;
-    // rating: number;
-    // inventoryStatus: string;
 };
 
-// const navigate = useNavigate();
-
-// const goToHome = () => {
-//   navigate('/home');
-// };
 
 const ProductList: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -133,8 +122,8 @@ const ProductList: React.FC = () => {
 
     const productDialogFooter = (
         <>
-            <Button label="Cancel" icon="pi pi-times" outlined onClick={hideDialog} />
-            <Button label="Save" icon="pi pi-check" onClick={saveProduct} />
+            <Button label="Cancelar" icon="pi pi-times" outlined onClick={hideDialog} />
+            <Button label="Salvar" icon="pi pi-check" onClick={saveProduct} />
         </>
     );
 
@@ -164,7 +153,7 @@ const ProductList: React.FC = () => {
                     <Column field="name" header="Nome" sortable></Column>
                     <Column field="description" header="Descrição" sortable></Column>
                     <Column field="price" header="Preço" sortable></Column>
-                    <Column field="quantity" header="Quabtidade" sortable></Column>
+                    <Column field="quantity" header="Quantidade" sortable></Column>
 
 
                     
@@ -178,12 +167,24 @@ const ProductList: React.FC = () => {
             </div>
             <Dialog visible={productDialog} header="Editar" modal footer={productDialogFooter} onHide={hideDialog}>
                 <div className="field">
-                    <label htmlFor="name">Nome</label>
+                    <label htmlFor="Description">Nome</label>
                     <InputText id="name" value={product.name} onChange={(e) => setProduct({ ...product, name: e.target.value })} required />
                 </div>
                 <div className="field">
-                  <label htmlFor="name">Descrição</label>
-                  <InputText id="email" value={product.description} onChange={(e) => setProduct({ ...product, description: e.target.value })} required />
+                  <label htmlFor="Description">Descrição</label>
+                  <InputText id="description" value={product.description} onChange={(e) => setProduct({ ...product, description: e.target.value })} required />
+                </div>
+
+
+                <div className="field">
+                  <label htmlFor="Price">Valor</label>
+                  <InputText id="price" value={product.price} onChange={(e) => setProduct({ ...product, price: e.target.value })} required />
+                </div>
+
+
+                <div className="field">
+                  <label htmlFor="Quantity">Quantidade</label>
+                  <InputText id="quantity" value={product.quantity} onChange={(e) => setProduct({ ...product, quantity: e.target.value })} required />
                 </div>
             </Dialog>
             <Dialog visible={deleteProductDialog} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteproductDialog}>

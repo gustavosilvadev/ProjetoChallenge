@@ -1,45 +1,7 @@
-/*
-
-using Microsoft.EntityFrameworkCore;
-using ProjetoChallenge.Data;
-using ProjetoChallenge.Models;
-using System.Security.Cryptography;
-using System.Text;
-
-namespace ProjetoChallenge.Services;
-public class UserService
-{
-    private readonly ApplicationDbContext _context;
-
-    public UserService(ApplicationDbContext context)
-    {
-        _context = context;
-    }
-
-    public async Task<User?> AuthenticateAsync(string username, string password)
-    {
-        var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
-        if (user == null || !VerifyPassword(password, user.PasswordHash)) return null;
-        return user;
-    }
-
-    private bool VerifyPassword(string password, string storedHash)
-    {
-        using var sha256 = SHA256.Create();
-        var hashed = Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(password)));
-        return hashed == storedHash;
-    }
-}
-
-*/
-
-
 using BCrypt.Net;
 using Microsoft.EntityFrameworkCore;
 using ProjetoChallenge.Data;
 using ProjetoChallenge.Models;
-// using System.Collections.Generic;
-// using System.Threading.Tasks;
 
 namespace ProjetoChallenge.Services;
 

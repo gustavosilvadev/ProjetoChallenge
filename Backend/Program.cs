@@ -1,11 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using ProjetoChallenge.Data;
-using ProjetoChallenge.Services;
+using ProjetoChallenge.Extensions;
+// using ProjetoChallenge.Services;
+using static ProjetoChallenge.Extensions.ServiceCollectionExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddScoped<UserService>();
+
+// builder.Services.AddScoped<UserService>();
+builder.Services.RegisterServices();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
