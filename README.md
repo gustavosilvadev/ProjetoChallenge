@@ -52,8 +52,8 @@ A API estará rodando em `http://localhost:5000`
 
 ## Configuração do Frontend
 
-### Criando um Dockerfile para o Frontend
-Para containerizar o frontend, crie um arquivo `Dockerfile` dentro da pasta `Frontend` com o seguinte conteúdo:
+### Criando um Dockerfile para o frontend-application
+Para containerizar o frontend, crie um arquivo `Dockerfile` dentro da pasta `frontend-application` com o seguinte conteúdo:
 
 ```
 # Usando uma imagem do Node.js
@@ -73,17 +73,17 @@ CMD ["npm", "start"]
 ```
 
 ### Executando com Docker
-1. Acesse a pasta `Frontend`:
+1. Acesse a pasta `frontend-application`:
    ```sh
-   cd ProjetoChallenge/Frontend
+   cd ProjetoChallenge/frontend-application
    ```
 2. Construa a imagem do frontend:
    ```sh
-   docker build -t projetochallenge-frontend .
+   docker build -t projeto_challenge_frontend .
    ```
 3. Rode o container:
    ```sh
-   docker run -p 3000:3000 projetochallenge-frontend
+   docker run -p 3000:3000 projeto_challenge_frontend
    ```
 
 ### Executando localmente
